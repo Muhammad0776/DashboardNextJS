@@ -1,6 +1,7 @@
 const initialState = {
   isSidebarShow: true,
-  card: [
+  todos: [],
+  cards: [
     {
       currentBalance: 2850.75,
       income: 1500.5,

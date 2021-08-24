@@ -1,10 +1,6 @@
 import Dashboard from "../containers/Dashboard";
-import img1 from "../public/Card1.png";
-import img2 from "../public/green-card.png";
-import img3 from "../public/mastercard.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // import Swiper core and required modules
 import SwiperCore, { Navigation } from "swiper/core";
 import styled from "styled-components";
@@ -14,7 +10,6 @@ import { useSelector } from "react-redux";
 // install Swiper modules
 SwiperCore.use([Navigation]);
 
-// Swiper styled
 const MySwiper = styled(Swiper)`
   width: 100%;
   .swiper-slide {
@@ -54,17 +49,27 @@ const Users = () => {
                   >
                     <SwiperSlide>
                       <div className="payCard">
-                        <img src={img1} alt="not photo" />
+                        <img src="image/card1.png" className="w-100" alt="" />
                       </div>
                     </SwiperSlide>
                     <SwiperSlide>
                       <div className="payCard">
-                        <img src={img2} alt="not photo" />
+                        <img src="image/card2.png" className="w-100" alt="" />
                       </div>
                     </SwiperSlide>
                     <SwiperSlide>
                       <div className="payCard">
-                        <img src={img3} alt="not photo" />
+                        <img src="image/card3.png" className="w-100" alt="" />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="payCard">
+                        <img src="image/card4.png" className="w-100" alt="" />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="payCard">
+                        <img src="image/card5.png" className="w-100" alt="" />
                       </div>
                     </SwiperSlide>
                   </MySwiper>

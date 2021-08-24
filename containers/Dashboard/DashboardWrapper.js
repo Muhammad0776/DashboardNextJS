@@ -7,21 +7,7 @@ const DashboardWrapper = styled.div`
     flex-shrink: 0;
     width: 50px;
     overflow: hidden;
-    background-image: linear-gradient(
-      to left top,
-      #d16ba5,
-      #c777b9,
-      #ba83ca,
-      #aa8fd8,
-      #9a9ae1,
-      #8aa7ec,
-      #79b3f4,
-      #69bff8,
-      #52cffe,
-      #41dfff,
-      #46eefa,
-      #5ffbf1
-    );
+    background: #ffffff;
     transition: 0.3s;
     height: 100vh;
     position: sticky;
@@ -40,7 +26,7 @@ const DashboardWrapper = styled.div`
     h2 {
       color: #00049d !important;
       position: absolute;
-      top: 80px;
+      top: 60px;
       left: 100px;
     }
     .toggle {
@@ -85,7 +71,7 @@ const DashboardWrapper = styled.div`
               backdrop-filter: blur(1.5px);
               -webkit-backdrop-filter: blur(1.5px);
               border: 1px solid rgba(255, 255, 255, 0.18);
-              color: white !important;
+              color: #111 !important;
             }
           }
         }

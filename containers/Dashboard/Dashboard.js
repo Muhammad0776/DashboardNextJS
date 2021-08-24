@@ -5,11 +5,15 @@ import {
   faImages,
   faNewspaper,
   faTasks,
+  faUserFriends,
   faUsers,
   faVideo,
 } from "@fortawesome/free-solid-svg-icons";
+import { MdCallEnd } from "react-icons/md";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link, List, ListItem } from "@material-ui/core";
 import React from "react";
+import { Slide } from "react-awesome-reveal";
 import { useDispatch, useSelector } from "react-redux";
 import { TOGGLE_MENU } from "../../redux/type";
 import DashboardWrapper from "./DashboardWrapper";
@@ -33,10 +37,7 @@ const Dashboard = ({ children, menu }) => {
     <DashboardWrapper>
       <div className={`sidebar ${(show && "show") || ""}`}>
         <div className="d-flex justify-content-between">
-          <img
-            src="https://colorlib.com/polygon/cooladmin/images/icon/logo.png"
-            alt=""
-          />
+          <img src="image/logo.png" alt="" />
           <div
             className="toggle"
             onClick={() => TOGGLE_MENU(dispatch)}
@@ -55,7 +56,7 @@ const Dashboard = ({ children, menu }) => {
                 <Link href={`${v.to}`}>
                   <a className={`${menu === v.id ? "active" : ""}`}>
                     <ListItem button>
-                      <FontAwesomeIcon icon={v.icon} className="me-2" />{" "}
+                      <FontAwesomeIcon icon={v.icon} className="me-2" />
                       {v.title}
                     </ListItem>
                   </a>
@@ -77,7 +78,7 @@ const Dashboard = ({ children, menu }) => {
               placeholder="Search..."
             />
             <div className="others me-2">
-              <MdCall />
+              <MdCallEnd />
             </div>
             <div className="others">
               <FontAwesomeIcon icon={faUserFriends} />
