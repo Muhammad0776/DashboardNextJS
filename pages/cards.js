@@ -1,14 +1,16 @@
 import Dashboard from "../containers/Dashboard";
+import CardStyle from "../styles/cardsStyle";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+
 // import Swiper core and required modules
-import SwiperCore, { Navigation } from "swiper/core";
+import SwiperCore, { Scrollbar } from "swiper/core";
 import styled from "styled-components";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
 // install Swiper modules
-SwiperCore.use([Navigation]);
+SwiperCore.use([Scrollbar]);
 
 const MySwiper = styled(Swiper)`
   width: 100%;
@@ -16,11 +18,29 @@ const MySwiper = styled(Swiper)`
     padding: 0 15px;
     width: 100%;
     .payCard {
-      height: 160px;
+      width: 100%;
+      height: 230px;
       border-radius: 20px;
+      background-color: #123;
       overflow: hidden;
       padding: 15px;
+      color: white;
     }
+  }
+  .swiper-scrollbar-drag {
+    height: 100%;
+    width: 100%;
+    background: #1a7cbc;
+    border-radius: 10px;
+  }
+  .swiper-scrollbar {
+    opacity: 1 !important;
+    background: #f1f1f1;
+    border-radius: 14px;
+    width: 450px;
+    height: 11.47px;
+    position: absolute;
+    top: 210px;
   }
 `;
 
@@ -30,16 +50,17 @@ const Users = () => {
   const card = cards[activeIndex];
 
   return (
-    <div>
+    <CardStyle>
       <Dashboard menu={"cards"}>
         <h1>Cards</h1>
         <div class="row">
           <div className="col-md-6">
-            <div className="shadow rounded p-3 mb-3">
+            <div className="shadow card p-3 mb-3">
               <p className="fw-bold">Cards</p>
               <div className="row">
-                <div className="col-md-8">
+                <div className="col-md-8 bor-right">
                   <MySwiper
+                    scrollbar={{ hide: true }}
                     navigation={true}
                     updateOnWindowResize={true}
                     className="mySwiper"
@@ -48,37 +69,49 @@ const Users = () => {
                     }}
                   >
                     <SwiperSlide>
-                      <div className="payCard">
-                        <img src="image/card1.png" className="w-100" alt="" />
-                      </div>
+                      <div className="payCard">Card1</div>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <div className="payCard">
-                        <img src="image/card2.png" className="w-100" alt="" />
-                      </div>
+                      <div className="payCard">Card2</div>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <div className="payCard">
-                        <img src="image/card3.png" className="w-100" alt="" />
-                      </div>
+                      <div className="payCard">Card3</div>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <div className="payCard">
-                        <img src="image/card4.png" className="w-100" alt="" />
-                      </div>
+                      <div className="payCard">Card4</div>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <div className="payCard">
-                        <img src="image/card5.png" className="w-100" alt="" />
-                      </div>
+                      <div className="payCard">Card5</div>
                     </SwiperSlide>
                   </MySwiper>
                 </div>
                 <div className="col-md-4">
-                  <p>Card: {activeIndex + 1}</p>
-                  <p>Current balance: {card.currentBalance}</p>
-                  <p>Income: {card.income}</p>
-                  <p>Outcome: {card.outcome}</p>
+                  {/* <p className="text-end">Card: {activeIndex + 1}</p> */}
+                  <div className="me-3">
+                    <div className="text-end">
+                      <div className="text-primary">
+                        <b className="fs-4 me-2">$</b>
+                        <span className="fs-1 fw-bold">
+                          {card.currentBalance}
+                        </span>
+                      </div>
+                      <p className="text-muted">Current balance </p>
+                    </div>
+                    <div className="text-end">
+                      <div className="text-success">
+                        <b className="fs-4 me-2">$</b>
+                        <span className="fs-4">{card.income}</span>
+                      </div>
+                      <p className="text-muted">Income</p>
+                    </div>
+                    <div className="text-end">
+                      <div className="text-danger">
+                        <b className="fs-4 me-2">$</b>
+                        <span className="fs-4">{card.outcome}</span>
+                      </div>
+                      <p className="text-muted">Outcome</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -99,7 +132,7 @@ const Users = () => {
           </div>
         </div>
       </Dashboard>
-    </div>
+    </CardStyle>
   );
 };
 

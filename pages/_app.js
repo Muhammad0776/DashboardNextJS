@@ -8,8 +8,9 @@ import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CS
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 
+// Import Swiper styles
 import "swiper/swiper.min.css";
-import "swiper/components/navigation/navigation.min.css";
+import "swiper/components/scrollbar/scrollbar.min.css";
 
 function MyApp({ Component, pageProps }) {
   return (

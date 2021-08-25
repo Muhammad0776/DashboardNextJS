@@ -17,6 +17,16 @@ const initialState = {
       income: 300.5,
       outcome: 0,
     },
+    {
+      currentBalance: 3240.75,
+      income: 3450.5,
+      outcome: 25,
+    },
+    {
+      currentBalance: 1340.75,
+      income: 753.5,
+      outcome: 64.3,
+    },
   ],
 };
 

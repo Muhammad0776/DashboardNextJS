@@ -36,8 +36,8 @@ const DashboardWrapper = styled.div`
       border-radius: 100%;
       text-align: center;
       transition: 0.3s;
-      color: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      color: #111;
+      border: 1px solid rgba(255, 255, 255, 0.8);
       position: absolute;
       top: 30px;
       left: 250px;
@@ -79,7 +79,7 @@ const DashboardWrapper = styled.div`
     }
   }
   .rightside {
-    background: #eeeeee;
+    background: #ffffff;
     flex: 1;
     position: relative;
     header {

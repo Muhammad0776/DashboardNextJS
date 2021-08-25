@@ -15,7 +15,7 @@ import { Link, List, ListItem } from "@material-ui/core";
 import React from "react";
 import { Slide } from "react-awesome-reveal";
 import { useDispatch, useSelector } from "react-redux";
-import { TOGGLE_MENU } from "../../redux/type";
+import { toggleMenu } from "../../redux/type";
 import DashboardWrapper from "./DashboardWrapper";
 
 const menus = [
@@ -40,7 +40,7 @@ const Dashboard = ({ children, menu }) => {
           <img src="image/logo.png" alt="" />
           <div
             className="toggle"
-            onClick={() => TOGGLE_MENU(dispatch)}
+            onClick={() => toggleMenu(dispatch)}
             variant="contained"
             disableElevation
           >
@@ -68,7 +68,7 @@ const Dashboard = ({ children, menu }) => {
       </div>
       <div className="rightside">
         <header className="d-flex justify-content-between border-bottom">
-          <h3 className="md-title d-flex justify-content-center align-items-center d-none d-md-block ps-2">
+          <h3 className="md-title mb-0 d-flex justify-content-center align-items-center d-none d-md-block ps-2">
             Dashboard
           </h3>
           <div className="text-end d-flex justify-content-center align-items-center">
